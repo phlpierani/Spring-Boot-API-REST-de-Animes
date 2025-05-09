@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql_devdojo
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devdojo
+    ports:
+      - "3307:3306"
+    volumes:
+      - devdojo_data:/var/lib/mysql
+volumes:
+  devdojo_data:
